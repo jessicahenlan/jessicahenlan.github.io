@@ -276,7 +276,6 @@
 
   <!-- HEADER -->
   <header class="header">
-    <h1 class="name">Jessica Henlan</h1>
     <p class="subtitle">UGC &amp; Lifestyle Content Creator<br>Rate Card &nbsp;·&nbsp; AUD excl. GST</p>
   </header>
 
