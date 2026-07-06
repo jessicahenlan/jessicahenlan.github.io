@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jessica Henlan — Influencer Marketing Rate Card</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --burgundy:   #4c1413;
+      --pink:       #e96b7e;
+      --light-pink: #ebb3c0;
+      --cream:      #fdf6ef;
+      --charcoal:   #2e2e2e;
+      --white:      #ffffff;
+      --rule:       rgba(235,179,192,0.45);
+    }
+
+    * { margin:0; padding:0; box-sizing:border-box; }
+
+    body {
+      background: var(--cream);
+      color: var(--charcoal);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ─── HEADER ─── */
+    .header {
+      background: var(--burgundy);
+      padding: 56px 72px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .header-ring {
+      position: absolute;
+      border-radius: 50%;
+      border: 1px solid rgba(235,179,192,0.1);
+      top: 50%; right: -200px;
+      transform: translateY(-50%);
+      pointer-events: none;
+    }
+    .header-ring:nth-child(1) { width: 300px; height: 300px; }
+    .header-ring:nth-child(2) { width: 500px; height: 500px; }
+    .header-ring:nth-child(3) { width: 700px; height: 700px; }
+
+    .header-inner {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .header-name {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      color: var(--cream);
+      letter-spacing: -0.03em;
+      line-height: 0.95;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .header-subtitle {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--light-pink);
+      margin-bottom: 6px;
+    }
+
+    .header-meta {
+      font-size: 9px;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(235,179,192,0.5);
+    }
+
+    /* ─── PAGE BODY ─── */
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 64px 72px 80px;
+    }
+
+    /* ─── SECTION ─── */
+    .section { margin-bottom: 52px; }
+
+    .section-head {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+    }
+
+    .section-title {
+      font-size: clamp(18px, 2.5vw, 26px);
+      font-weight: 800;
+      color: var(--burgundy);
+      letter-spacing: -0.02em;
+      white-space: nowrap;
+    }
+
+    .section-rule { flex:1; height:1px; background: var(--rule); }
+
+    .section-intro {
+      font-size: 12px;
+      color: var(--charcoal);
+      line-height: 1.85;
+      margin-bottom: 24px;
+      font-weight: 400;
+      max-width: 640px;
+    }
+
+    /* ─── ROWS ─── */
+    .rows {
+      background: var(--white);
+      border: 1px solid var(--rule);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+      gap: 24px;
+      padding: 14px 32px;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .row:last-child { border-bottom: none; }
+
+    .row-name {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--burgundy);
+      margin-bottom: 2px;
+      letter-spacing: 0.01em;
+    }
+
+    .row-note {
+      font-size: 11px;
+      color: var(--charcoal);
+      line-height: 1.65;
+      font-weight: 400;
+    }
+
+    .row-price {
+      font-weight: 800;
+      font-size: 15px;
+      color: var(--burgundy);
+      text-align: right;
+      white-space: nowrap;
+      padding-top: 1px;
+      letter-spacing: -0.01em;
+    }
+
+    .row-price-sub {
+      display: block;
+      font-size: 8px;
+      font-weight: 600;
+      color: var(--light-pink);
+      letter-spacing: 0.12em;
+      text-align: right;
+      text-transform: uppercase;
+      margin-top: 2px;
+    }
+
+    /* ─── STAT STRIP ─── */
+    .stat-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--white);
+      border: 1px solid var(--rule);
+    }
+
+    .stat {
+      padding: 22px 28px;
+      text-align: center;
+    }
+
+    .stat + .stat { border-left: 1px solid var(--rule); }
+
+    .stat-num {
+      font-size: 22px;
+      font-weight: 800;
+      color: var(--burgundy);
+      letter-spacing: -0.01em;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--light-pink);
+      margin-top: 4px;
+    }
+
+    /* ─── GIFTED BOX (dark) ─── */
+    .amp-box {
+      background: var(--burgundy);
+      padding: 0;
+    }
+
+    .amp-header {
+      padding: 18px 32px 14px;
+      border-bottom: 1px solid rgba(235,179,192,0.2);
+    }
+
+    .amp-eyebrow {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--light-pink);
+      margin-bottom: 4px;
+    }
+
+    .amp-intro {
+      font-size: 11px;
+      color: rgba(253,246,239,0.65);
+      font-weight: 400;
+    }
+
+    .amp-body {
+      padding: 18px 32px 22px;
+    }
+
+    .amp-body p {
+      font-size: 11.5px;
+      color: rgba(253,246,239,0.8);
+      line-height: 1.8;
+      font-weight: 400;
+    }
+
+    .amp-body p + p { margin-top: 10px; }
+
+    .amp-list {
+      margin-top: 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .amp-list-item {
+      font-size: 11px;
+      color: rgba(253,246,239,0.75);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      line-height: 1.6;
+    }
+
+    .amp-dot {
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--pink);
+      flex-shrink: 0;
+      margin-top: 6px;
+    }
+
+    /* ─── TAGS ─── */
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 16px;
+    }
+
+    .tag {
+      font-size: 8px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      padding: 4px 10px;
+      border: 1px solid;
+    }
+
+    .tag-a { color: var(--burgundy); border-color: var(--burgundy); }
+    .tag-b { color: var(--pink);     border-color: var(--pink); }
+    .tag-c { color: #888;            border-color: var(--rule); }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      background: var(--burgundy);
+      padding: 24px 72px;
+      font-size: 9px;
+      font-weight: 400;
+      color: rgba(235,179,192,0.45);
+      letter-spacing: 0.08em;
+      line-height: 1.9;
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    /* ─── RESPONSIVE ─── */
+    @media (max-width: 700px) {
+      .header        { padding: 40px 28px; }
+      .header-inner  { flex-direction: column; align-items: flex-start; gap: 16px; }
+      .header-right  { text-align: left; }
+      .page          { padding: 44px 28px 64px; }
+      .row           { padding: 14px 20px; }
+      .stat-strip    { grid-template-columns: 1fr; }
+      .stat + .stat  { border-left: none; border-top: 1px solid var(--rule); }
+      .amp-header    { padding: 16px 20px 12px; }
+      .amp-body      { padding: 16px 20px 20px; }
+      .footer        { padding: 22px 28px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-ring"></div>
+  <div class="header-ring"></div>
+  <div class="header-ring"></div>
+  <div class="header-inner">
+    <h1 class="header-name">Jessica<br>Henlan</h1>
+    <div class="header-right">
+      <p class="header-subtitle">Influencer &amp; Personal Brand Partnerships</p>
+      <p class="header-meta">Rate Card &nbsp;·&nbsp; AUD excl. GST</p>
+    </div>
+  </div>
+</header>
+
+
+<div class="page">
+
+  <!-- INTRO -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Partnerships</h2>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-intro">This covers content posted from my own account — @jessh.ica — as a personal recommendation rather than a produced deliverable. Pricing depends on scope, usage, and exclusivity, so most partnerships are quoted individually. Get in touch with the product, platform, and what you have in mind for a tailored quote.</p>
+  </section>
+
+  <!-- STATS (placeholder — update with current figures) -->
+  <section class="section">
+    <div class="stat-strip">
+      <div class="stat">
+        <p class="stat-num">—</p>
+        <p class="stat-label">Followers</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">—</p>
+        <p class="stat-label">Avg. Reach</p>
+      </div>
+      <div class="stat">
+        <p class="stat-num">Sydney</p>
+        <p class="stat-label">Based</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERSHIP TYPES -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Partnership Types</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="rows">
+      <div class="row">
+        <div><p class="row-name">Sponsored feed post / Reel</p><p class="row-note">A dedicated post recommending your product to my own audience, in my own voice.</p></div>
+        <div><p class="row-price">POA</p></div>
+      </div>
+      <div class="row">
+        <div><p class="row-name">Stories series</p><p class="row-note">Multi-frame Stories coverage — unboxing, first impressions, or a day-in-the-life feature.</p></div>
+        <div><p class="row-price">POA</p></div>
+      </div>
+      <div class="row">
+        <div><p class="row-name">Dedicated review / try-it post</p><p class="row-note">More editorial, opinion-led coverage — genuine first impressions rather than a straight ad format.</p></div>
+        <div><p class="row-price">POA</p></div>
+      </div>
+      <div class="row">
+        <div><p class="row-name">Extended usage / exclusivity</p><p class="row-note">Category exclusivity or extended usage of the content beyond the original post.</p></div>
+        <div><p class="row-price">POA</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GIFTED COLLABS -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Gifted Collaborations</h2>
+      <div class="section-rule"></div>
+    </div>
+    <div class="amp-box">
+      <div class="amp-header">
+        <p class="amp-eyebrow">Unpaid partnerships</p>
+        <p class="amp-intro">Open to select gifted collaborations for products I'd genuinely use and talk about.</p>
+      </div>
+      <div class="amp-body">
+        <p>I take on a small number of gifted partnerships outside of paid work — these are products or brands I'd already be interested in, not a default response to every pitch.</p>
+        <div class="amp-list">
+          <div class="amp-list-item"><span class="amp-dot"></span>Genuine fit with my own interests and lifestyle — not a category I'm covering for the sake of it</div>
+          <div class="amp-list-item"><span class="amp-dot"></span>No obligation on format or posting timeline unless agreed upfront</div>
+          <div class="amp-list-item"><span class="amp-dot"></span>Happy to discuss product-only, or product plus a small gifted fee depending on scope</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section">
+    <div class="section-head">
+      <h2 class="section-title">Getting in Touch</h2>
+      <div class="section-rule"></div>
+    </div>
+    <p class="section-intro">
+      Send over the product, platform, and campaign goals and I'll come back with a tailored quote. Rates vary based on content format, usage rights, and exclusivity — there's no one-size rate for personal brand partnerships.
+    </p>
+    <div class="tag-row">
+      <span class="tag tag-a">Quoted per partnership</span>
+      <span class="tag tag-c">Usage & exclusivity affect pricing</span>
+      <span class="tag tag-c">50% deposit for paid partnerships</span>
+    </div>
+  </section>
+
+</div>
+
+<!-- FOOTER -->
+<footer class="footer">
+  All prices in AUD and exclude GST &nbsp;·&nbsp; Rates vary by scope, usage, and exclusivity — get in touch for a tailored quote &nbsp;·&nbsp; jessicahenlan@gmail.com
+</footer>
+
+</body>
+</html>
